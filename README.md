@@ -30,6 +30,12 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    chmod +x calculate_seqera_io_usage.py
    ```
 
+Alternatively, you can use [uv](https://docs.astral.sh/uv/) to run within a uv managed environment:
+
+```bash
+uv sync
+uv run calculate_seqera_io_usage.py --help
+```
 
 ### Basic Usage
 
