@@ -22,6 +22,10 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
 ## Installation
 1. Clone this repository or download the script
 2. Install required dependencies:
+
+> [!NOTE] 
+> This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
+
    ```bash
    pip install requests pandas requests typer
    ```
@@ -31,9 +35,6 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    ```bash
    pip install -r requirements.txt
    ```
-
-> [!NOTE] 
-> This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
 
 3. Make the script executable:
    ```bash
