@@ -15,6 +15,7 @@ This tool calculates IO usage metrics for workflows run on Seqera Platform. It c
 - Required Python packages:
   - requests (external)
   - pandas (external)
+  - typer (external)
 
 The other dependencies (logging, argparse, datetime, os) are part of the Python standard library.
 
@@ -25,7 +26,13 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    pip install requests pandas requests typer
    ```
 
-!!! Note
+   or
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+   !!! Note
     This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
 
 3. Make the script executable:
@@ -33,6 +40,12 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    chmod +x calculate_seqera_io_usage.py
    ```
 
+Alternatively, you can use [uv](https://docs.astral.sh/uv/) to run within a uv managed environment:
+
+```bash
+uv sync
+uv run calculate_seqera_io_usage.py --help
+```
 
 ### Basic Usage
 
