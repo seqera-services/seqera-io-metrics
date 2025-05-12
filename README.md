@@ -32,8 +32,8 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    pip install -r requirements.txt
    ```
 
-!!! Note
-This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
+> [!NOTE] 
+> This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
 
 3. Make the script executable:
    ```bash
