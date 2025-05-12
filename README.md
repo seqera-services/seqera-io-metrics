@@ -22,6 +22,10 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
 ## Installation
 1. Clone this repository or download the script
 2. Install required dependencies:
+
+> [!NOTE] 
+> This script has been tested with Pandas 2.2.3, Requests 2.32.3 and Typer 0.15.3.
+
    ```bash
    pip install requests pandas requests typer
    ```
@@ -42,6 +46,18 @@ Alternatively, you can use [uv](https://docs.astral.sh/uv/) to run within a uv m
 ```bash
 uv sync
 uv run calculate_seqera_io_usage.py --help
+```
+
+Finally you can use conda to create a new environment and install the dependencies:
+
+```bash
+conda env create -f environment.yml -n seqera-io-metrics
+```
+
+and then activate the environment:
+
+```bash
+conda activate seqera-io-metrics
 ```
 
 ### Basic Usage
