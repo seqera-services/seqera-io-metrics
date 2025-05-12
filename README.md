@@ -25,6 +25,13 @@ The other dependencies (logging, argparse, datetime, os) are part of the Python 
    ```bash
    pip install requests pandas requests typer
    ```
+
+   or
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
 3. Make the script executable:
    ```bash
    chmod +x calculate_seqera_io_usage.py
