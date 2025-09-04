@@ -9,7 +9,6 @@ from typing import Annotated, Any
 import pandas as pd
 import requests
 import typer
-from typer import Option
 
 logging.basicConfig(
     level=logging.INFO,
@@ -286,7 +285,7 @@ def display_summary_statistics(df_summary: pd.DataFrame) -> None:
 def main(
     from_date: Annotated[
         datetime,
-        Option(
+        typer.Option(
             ...,
             "--from",
             help="Earliest date to consider (inclusive) in YYYY-MM-DD format",
@@ -294,26 +293,25 @@ def main(
     ],
     to_date: Annotated[
         datetime | None,
-        Option(
-            None, "--to", help="Last date to consider (inclusive) in YYYY-MM-DD format"
+        typer.Option(
+            "--to", help="Last date to consider (inclusive) in YYYY-MM-DD format"
         ),
     ] = None,
     output: Annotated[
         str,
-        Option("io_metrics.csv", "--output", "-o", help="Output CSV file path"),
+        typer.Option("--output", "-o", help="Output CSV file path"),
     ] = "io_metrics.csv",
     workspace_id: Annotated[
         str | None,
-        Option(None, "--workspace-id", "-w", help="Specific workspace ID to analyze"),
+        typer.Option("--workspace-id", "-w", help="Specific workspace ID to analyze"),
     ] = None,
     user: Annotated[
         str | None,
-        Option(None, "--user", "-u", help="Filter workflows by user"),
+        typer.Option("--user", "-u", help="Filter workflows by user"),
     ] = None,
     status: Annotated[
         str,
-        Option(
-            "SUCCEEDED",
+        typer.Option(
             "--status",
             "-s",
             help="Filter workflows by status (SUCCEEDED, FAILED, etc.)",
@@ -321,8 +319,7 @@ def main(
     ] = "SUCCEEDED",
     endpoint: Annotated[
         str | None,
-        Option(
-            None,
+        typer.Option(
             "--endpoint",
             "-e",
             help="API endpoint URL (defaults to environment variable)",
