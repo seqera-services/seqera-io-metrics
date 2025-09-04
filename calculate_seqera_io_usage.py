@@ -393,10 +393,21 @@ def main(
         if orgs:
             for org in orgs.get("organizations", []):
                 org_id = org.get("orgId")
+
+                # Remove org with community organisation from the orgs list if present
+                if org_id == "187965850823746":
+                    continue
+
                 organization_name = org.get("name")
                 workspaces = client.workspaces(org_id).get("workspaces", [])
+
                 for workspace in workspaces:
                     workspace_id = workspace.get("id")
+
+                    # Skip the community/showcase workspace
+                    if workspace_id == 40230138858677:
+                        continue
+
                     workspace_name = workspace.get("name")
 
                     if workspace_id is None:
